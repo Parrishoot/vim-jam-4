@@ -13,6 +13,8 @@ public class CheckPointController : MonoBehaviour
     [SerializeField]
     private RewindLineController rewindLineController;
 
+    private bool flashbackInitiated = false;
+
     private GameObject playerGameObject;
 
     private Timer timer;
@@ -35,10 +37,16 @@ public class CheckPointController : MonoBehaviour
 
     public void FlashBack() {
 
-        Destroy(playerGameObject);
+        if(flashbackInitiated) {
+            return;
+        }
 
         RewinderController rewinderController = rewinderSpawner.Spawn(playerGameObject.transform.position).GetComponent<RewinderController>();
         rewinderController.Init(gameObject);
         rewindLineController.SetLineEndTransform(rewinderController.transform);
+
+        Destroy(playerGameObject);
+
+        flashbackInitiated = true;
     }
 }

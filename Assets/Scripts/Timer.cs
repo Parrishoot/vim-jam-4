@@ -43,6 +43,10 @@ public class Timer
         return timeRemaining / totalTime;;
     }
 
+    public float GetPercentageFinished() {
+        return 1 - GetPercentageRemaining();
+    }
+
     public void AddOnTimerFinishedEvent(TimerFinishedEvent timerFinishedEvent) {
         onTimerFinishedEvent += timerFinishedEvent;
     }

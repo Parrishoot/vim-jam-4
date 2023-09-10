@@ -22,6 +22,9 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField]
     private Spawner flashBackSpawner;
 
+    [SerializeField]
+    private RewindCooldownController rewindCooldownController;
+
     private CheckPointController activeCheckpointController;
 
     private void Update() {
@@ -42,7 +45,7 @@ public class PlayerInputController : MonoBehaviour
             playerMovementController.Jump();
         }
 
-        if(Input.GetKeyDown(flashBackKey)) {
+        if(Input.GetKeyDown(flashBackKey) && rewindCooldownController.CanRewind()) {
             
             if(activeCheckpointController == null) {
                 activeCheckpointController = flashBackSpawner.Spawn().GetComponent<CheckPointController>();

@@ -15,9 +15,6 @@ public class Spawner : MonoBehaviour
             location = gameObject.transform.position;
         }
 
-        Debug.Log(location);
-        Debug.Log((Vector3) location);
-
         return Instantiate(prefabToSpawn, (Vector3) location, quaternion.identity, parent);
     }
 }

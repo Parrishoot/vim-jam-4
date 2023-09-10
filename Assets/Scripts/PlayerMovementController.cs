@@ -15,7 +15,7 @@ public class PlayerMovementController : MonoBehaviour
     private new Rigidbody2D rigidbody;
 
     [SerializeField]
-    private int allowedJumpsBetweenFloorHits = 2;
+    private int allowedAirJumps = 1;
 
     [SerializeField]
     private FloorChecker floorChecker;
@@ -41,7 +41,7 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     public void Jump() {
-        if(jumpsLeft > 0) {
+        if(JumpsAllowed()) {
             jumpedSinceLastFixedUpdate = true;
         }
     }
@@ -53,7 +53,10 @@ public class PlayerMovementController : MonoBehaviour
         if(jumpedSinceLastFixedUpdate) {
 
             jumpedSinceLastFixedUpdate = false;
-            jumpsLeft--;
+
+            if(!floorChecker.OnGround()) {
+                jumpsLeft--;
+            }
 
             // Reset Y velocity
             rigidbody.velocity = rigidbody.velocity * Vector2.right;
@@ -62,7 +65,20 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    public bool JumpsAllowed() {
+        
+        if(floorChecker.OnGround()) {
+            return true;
+        }
+
+        if(jumpsLeft > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     public void ResetJumps() {
-        jumpsLeft = allowedJumpsBetweenFloorHits;
+        jumpsLeft = allowedAirJumps;
     }
 }
