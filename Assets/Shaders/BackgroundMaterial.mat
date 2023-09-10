@@ -55,9 +55,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _BackgroundFlowSpeed: 0.03
-    - _Scale: 2
+    - _Scale: 3.13
     m_Colors:
     - _BackgroundColor: {r: 0.97647053, g: 0.7607843, b: 0.16862747, a: 0}
-    - _BackgroundColor1: {r: 0.78039217, g: 0.8627451, b: 0.8156863, a: 0}
-    - _BackgroundColor2: {r: 0.60784316, g: 0.67058825, b: 0.69803923, a: 0}
+    - _BackgroundColor1: {r: 0.96862745, g: 0.5882353, b: 0.09019608, a: 0}
+    - _BackgroundColor2: {r: 0.9764706, g: 0.7607843, b: 0.16862746, a: 0}
   m_BuildTextureStacks: []

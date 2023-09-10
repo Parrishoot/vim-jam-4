@@ -13,6 +13,9 @@ public class CheckPointController : MonoBehaviour
     [SerializeField]
     private RewindLineController rewindLineController;
 
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+
     private bool flashbackInitiated = false;
 
     private GameObject playerGameObject;
@@ -26,7 +29,11 @@ public class CheckPointController : MonoBehaviour
     }
 
     public void Init(GameObject playerGameObject) {
+
         this.playerGameObject = playerGameObject;
+        transform.localScale = playerGameObject.transform.localScale;
+
+        spriteRenderer.sprite = playerGameObject.GetComponentInChildren<SpriteRenderer>().sprite;
 
         rewindLineController.SetLineStartTransform(transform);
         rewindLineController.SetLineEndTransform(playerGameObject.transform);

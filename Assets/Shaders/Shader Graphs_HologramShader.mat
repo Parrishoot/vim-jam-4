@@ -55,9 +55,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaLevel: 1
-    - _Noisiness: 0.2
+    - _Noisiness: 0.05
     - _TintEnabled: 0
-    - _WiggleLevel: 200
+    - _WiggleLevel: 1500
     m_Colors:
     - _TintColor: {r: 0.5529412, g: 0.91372555, b: 0.80392164, a: 1}
   m_BuildTextureStacks: []

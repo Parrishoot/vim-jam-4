@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _LineAlpha: 0.7
+    - _LineAlpha: 1
     - _LineSpeed: 5
     - _SegmentHeight: 0.23
     - _SegmentWidth: 0.3
