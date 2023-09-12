@@ -61,3 +61,9 @@ TagManager:
   - name: CameraSortingLayer
     uniqueID: 2117298293
     locked: 0
+  - name: Crystal
+    uniqueID: 3504724697
+    locked: 0
+  - name: UI
+    uniqueID: 3064158229
+    locked: 0

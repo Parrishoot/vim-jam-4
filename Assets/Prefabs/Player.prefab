@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 5994351162374583569}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
   rigidbody: {fileID: 7833706770770874080}
   allowedAirJumps: 1
   floorChecker: {fileID: 1104094887473186841}
-  freezeTime: 0.3
+  freezeTime: 0.5
 --- !u!114 &8986280693478317857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,10 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e48abf2ec12f4ea68244132e7f786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpKey: 32
-  moveLeftKey: 97
-  moveRightKey: 100
-  flashBackKey: 304
+  jumpKey: 273
+  moveLeftKey: 276
+  moveRightKey: 275
+  flashBackKey: 32
   playerMovementController: {fileID: 2667953381028104952}
   flashBackSpawner: {fileID: 8998973573404274663}
   rewindCooldownController: {fileID: 5994351162374583569}

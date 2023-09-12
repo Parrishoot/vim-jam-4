@@ -55,8 +55,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlueThreshold: 0.3
-    - _FadeAmount: 0.677
+    - _FadeAmount: 0
     m_Colors:
     - _EndColor: {r: 0.18823525, g: 0.8823529, b: 0.7254902, a: 0}
-    - _StartColor: {r: 1, g: 1, b: 1, a: 0}
+    - _StartColor: {r: 0.9098039, g: 0.23137255, b: 0.23137255, a: 1}
   m_BuildTextureStacks: []

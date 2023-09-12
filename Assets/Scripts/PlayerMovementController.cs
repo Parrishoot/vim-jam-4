@@ -104,6 +104,11 @@ public class PlayerMovementController : MonoBehaviour
         jumpsLeft = allowedAirJumps;
     }
 
+    public void Freeze() {
+        rigidbody.velocity = Vector2.zero;
+        enabled = false;
+    }
+
     private void ResetGravity() {
         rigidbody.gravityScale = gravityScale;
     }
