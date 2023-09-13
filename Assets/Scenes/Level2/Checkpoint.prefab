@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09b5f6b67ad06f741a9399d856a6a17c, type: 2}
+  - {fileID: 2100000, guid: 99c7ff806b4a6174d98ff2e333766f22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -112000905
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b856879c5c38b7c49a8e7915da03b264, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cfadd6b05618874fb324ac9d658f439, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7229e00331872754296e396a4cf12d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashBackTime: 5
+  flashBackTime: 3
   rewinderSpawner: {fileID: -4593866708274769714}
   rewindLineController: {fileID: 6618251623107776728}
   spriteRenderer: {fileID: 7905170537490512090}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48950d5a7d11654e8bd9d8dbe365976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 5335642823187804536, guid: d20e61069929a3b41a1ceee215a8c393, type: 3}
+  prefabToSpawn: {fileID: 5335642823187804536, guid: 9530ced9d4bb465498c356181b3dee82, type: 3}
 --- !u!1 &5797720577922598963
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 683c8fc5548500a45929d14097293456, type: 2}
+  - {fileID: 2100000, guid: ec8ea7d5139698c4b9bebea14933f6bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -17,11 +17,16 @@ public class PortalAnimationController : MonoBehaviour
     [SerializeField]
     private ParticleSystem particleSystem;
 
+    [SerializeField]
+    private Rotator crystalRotator;
+
     public void TransitionOut() {
 
         if(particleSystem.isPlaying) {
             particleSystem.Stop();
         }
+
+        crystalRotator.StopRotation();
 
         Sequence sequence = DOTween.Sequence();
 

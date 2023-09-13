@@ -33,9 +33,9 @@ public class TextFlutter
             Vector3 currCharOffset = animator.GetCharOffset(i);
 
             sequence.AppendInterval(i * letterDelay);
-            sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, bounceHeight, 0), bounceTime / 2).SetEase(Ease.OutQuad));
+            sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, bounceHeight, 0), bounceTime / 2).SetEase(Ease.InOutCubic));
             sequence.Join(animator.DOFadeChar(i, 1f, bounceTime / 2));
-            sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, -bounceHeight, 0), bounceTime / 2).SetEase(Ease.InQuad));
+            sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, -bounceHeight, 0), bounceTime / 2).SetEase(Ease.InCubic));
 
             fullSequence.Join(sequence.Play());
         }

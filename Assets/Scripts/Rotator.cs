@@ -10,14 +10,34 @@ public class Rotator : MonoBehaviour
     private float rotationSpeed;
 
     [SerializeField]
+    private float rotationAmount = 360f;
+
+    [SerializeField]
     private float waitTimeBetweenRotations;
+
+    [SerializeField]
+    private bool playOnStart = true;
+
+    private Sequence rotationSequence;
 
     // Start is called before the first frame update
     void Start()
     {
-        Sequence s = DOTween.Sequence();
-        s.Join(transform.DOLocalRotate(Vector3.forward * 720, rotationSpeed, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.InOutElastic));
-        s.AppendInterval(waitTimeBetweenRotations);
-        s.Play().SetLoops(-1);
+        if(playOnStart) {
+            StartRotation();
+        }
+    }
+
+    public void StartRotation() {
+        rotationSequence = DOTween.Sequence();
+        rotationSequence.AppendInterval(waitTimeBetweenRotations);
+        rotationSequence.Join(transform.DOLocalRotate(Vector3.forward * rotationAmount, rotationSpeed, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.InOutCubic));
+        rotationSequence.Play().SetLoops(-1);
+    }
+
+    public void StopRotation() {
+        if(rotationSequence.IsPlaying()){
+            rotationSequence.Kill();
+        }
     }
 }

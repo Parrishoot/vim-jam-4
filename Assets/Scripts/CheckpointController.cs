@@ -5,7 +5,7 @@ using UnityEngine;
 public class CheckPointController : MonoBehaviour
 {
     [SerializeField]
-    private float flashBackTime = 3;
+    private float flashBackTime = 10;
 
     [SerializeField]
     private Spawner rewinderSpawner;

@@ -22,11 +22,19 @@ public class LevelManager : Singleton<LevelManager>
     }
 
     public void BeginNextSceneTransition() {
-        transitionAnimationController.TransitionOut();
+        transitionAnimationController.TransitionOut(LoadNextLevel);
     }
 
     public void LoadNextLevel() {
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Death() {
+        transitionAnimationController.TransitionOut(RestartScene);
     }
 
 }

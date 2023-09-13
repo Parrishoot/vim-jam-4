@@ -11,6 +11,8 @@ public class TransitionAnimationController : MonoBehaviour
     [SerializeField]
     private float transitionTime = .25f;
 
+    private delegate void OnTransitionOutFinished();
+
     private const float MAX_SIZE = 2000;
 
     public void Start() {
@@ -21,7 +23,7 @@ public class TransitionAnimationController : MonoBehaviour
         transitionMaskTransform.DOSizeDelta(new Vector2(MAX_SIZE, MAX_SIZE), transitionTime).SetEase(Ease.InOutCubic);
     }
 
-    public void TransitionOut() {
-        transitionMaskTransform.DOSizeDelta(new Vector2(0, 0), transitionTime).SetEase(Ease.InOutCubic).OnComplete(LevelManager.Instance.LoadNextLevel);
+    public void TransitionOut(TweenCallback tweenCallback) {
+        transitionMaskTransform.DOSizeDelta(new Vector2(0, 0), transitionTime).SetEase(Ease.InOutCubic).OnComplete(tweenCallback);
     }
 }
