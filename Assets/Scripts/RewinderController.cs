@@ -30,9 +30,17 @@ public class RewinderController : MonoBehaviour
         rigidbody.DOMove(checkpointObject.transform.position, snapSpeed)
                  .SetEase(ease)
                  .OnComplete(() => {
+
+                    KeyHolder checkpointKeyHolder = checkpointObject.GetComponentInChildren<KeyHolder>();
+
+                    GameObject playerGameObject = playerSpawner.Spawn();
+                    KeyHolder playerKeyHolder = playerGameObject.GetComponentInChildren<KeyHolder>();
+
+                    playerKeyHolder.HoldKey(checkpointKeyHolder.GetKey());
+                    checkpointKeyHolder.RemoveKey();
+
                     Destroy(checkpointObject);
                     
-                    playerSpawner.Spawn();
                     shockWaveSpawner.Spawn();
 
                     CameraController.Instance.Shaker.SetShake(strength: .6f, time: .1f, vibrato:100);

@@ -982,7 +982,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4967,7 +4967,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3670057960072270724}
@@ -5122,8 +5122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c6224c0070e0b419aa6a20e18ad4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmount: 0.03
-  shakeVibrato: 50
+  shakeAmount: 0.05
+  shakeVibrato: 1
 --- !u!114 &7418195617668843518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5136,7 +5136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d21269f5998c74ea5d679020cf47e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
-  rotationAmount: 180
-  waitTimeBetweenRotations: 2
+  rotationSpeed: 1
+  rotationAmount: 360
+  waitTimeBetweenRotations: 4
   playOnStart: 1

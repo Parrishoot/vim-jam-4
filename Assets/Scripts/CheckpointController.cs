@@ -16,6 +16,9 @@ public class CheckPointController : MonoBehaviour
     [SerializeField]
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    private KeyHolder keyHolder;
+
     private bool flashbackInitiated = false;
 
     private GameObject playerGameObject;
@@ -35,6 +38,10 @@ public class CheckPointController : MonoBehaviour
 
         spriteRenderer.sprite = playerGameObject.GetComponentInChildren<SpriteRenderer>().sprite;
 
+        KeyHolder playerKeyHolder = playerGameObject.GetComponentInChildren<KeyHolder>();
+        keyHolder.HoldKey(playerKeyHolder.GetKey());
+        playerKeyHolder.RemoveKey();
+
         rewindLineController.SetLineStartTransform(transform);
         rewindLineController.SetLineEndTransform(playerGameObject.transform);
 
@@ -51,6 +58,10 @@ public class CheckPointController : MonoBehaviour
         RewinderController rewinderController = rewinderSpawner.Spawn(playerGameObject.transform.position).GetComponent<RewinderController>();
         rewinderController.Init(gameObject);
         rewindLineController.SetLineEndTransform(rewinderController.transform);
+
+        KeyHolder playerKeyHolder = playerGameObject.GetComponentInChildren<KeyHolder>();
+        keyHolder.HoldKey(playerKeyHolder.GetKey());
+        playerKeyHolder.RemoveKey();
 
         Destroy(playerGameObject);
 

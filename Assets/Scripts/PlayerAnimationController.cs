@@ -36,7 +36,7 @@ public class PlayerAnimationController : MonoBehaviour
             animator.Play("Idle");
         }
 
-        if(rigidbody.velocity.x != 0) {
+        if(Mathf.Abs(rigidbody.velocity.x) >= velocityThreshold) {
             transform.localScale = new Vector3(Mathf.Sign(rigidbody.velocity.x), 1, 1);
         }
     }
