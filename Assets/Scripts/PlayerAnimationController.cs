@@ -12,13 +12,14 @@ public class PlayerAnimationController : MonoBehaviour
     private new  Rigidbody2D rigidbody;
 
     [SerializeField]
-    private new  PlayerMovementController playerMovementController;
+    private PlayerMovementController playerMovementController;
 
-    private float velocityThreshold = .001f;
+    private float velocityThreshold = .01f;
 
     // Update is called once per frame
     void Update()
     {
+
         if(Mathf.Abs(rigidbody.velocity.y) > velocityThreshold) {
 
             if(playerMovementController.JumpsAllowed()) {
